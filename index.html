@@ -60,6 +60,13 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">Button color</span>
+                            </div>
+                            <input type="text" class="form-control button-color" value="#32be8f">
+                        </div>
                     </div>
 
 
@@ -85,7 +92,13 @@
                             </div>
                             <input type="text" class="form-control pass-input-title" value="Password">
                         </div>
-    
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">Button title</span>
+                            </div>
+                            <input type="text" class="form-control button-title" value="Login">
+                        </div>
                     </div>
 
                 </form>
@@ -152,6 +165,12 @@ $(document).ready(function(){
         $('.banner .background-image').hide(100).show(100);
     });
 
+    // button color
+    $('.button-color').on('change', function () {
+        $('.banner form .btn').css('background-color', $(".button-color").val())
+        $('.banner form .btn').hide(100).show(100);
+    });
+
     // form title
     $('.form-title').on('change', function () {
         $('.banner form .title').text($(".form-title").val())
@@ -170,6 +189,12 @@ $(document).ready(function(){
         $('.banner form .input-div .pass-label').hide(100).show(100);
     });
 
+    // button title
+    $('.button-title').on('change', function () {
+        $('.banner form .btn').val($(".button-title").val());
+        $('.banner form .btn').hide(100).show(100);
+    });
+
     // form color
     $('.form-light').on('click', function () {
         $('.banner form .title').css('color', '#d9d9d9')
@@ -177,6 +202,7 @@ $(document).ready(function(){
         $('.banner form .input-div i').css('color', '#d9d9d9')
         $('.banner form .input-div').css('border-color', '#d9d9d9')
         $('.banner form .need-help').css('color', '#999')
+        $('.banner form .btn').css('color', '#d9d9d9')
     });
     $('.form-dark').on('click', function () {
         $('.banner form .title').css('color', '#262626')
@@ -184,6 +210,7 @@ $(document).ready(function(){
         $('.banner form .input-div i').css('color', '#262626')
         $('.banner form .input-div').css('border-color', '#262626')
         $('.banner form .need-help').css('color', '#666')
+        $('.banner form .btn').css('color', '#262626')
     });
 
 })
@@ -325,7 +352,7 @@ form {
 	border-radius: 25px;
 	outline: none;
 	border: none;
-	background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+	background-color: #32be8f;
 	background-size: 200%;
 	font-size: 1.2rem;
 	color: #fff;
